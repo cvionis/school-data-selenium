@@ -19,4 +19,11 @@ for s in subjects:
 
 print(subjList)
 
+lessNumList = []
+for subject in subjList:
+    lessNum = subject.rsplit('\n', 1)[-1]
+    lessNumList.append(lessNum)
+
+print(lessNumList)
+
 
