@@ -11,5 +11,12 @@ driver.implicitly_wait(20)
 
 lessonsGroup = driver.find_element(By.ID, 'dvLessonsToday')
 
+subjList = []
+subjects = lessonsGroup.find_elements(By.CLASS_NAME, 'dailyLesson')
+
+for s in subjects:
+    subjList.append(s.text)
+
+print(subjList)
 
 
