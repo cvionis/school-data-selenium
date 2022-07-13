@@ -23,7 +23,8 @@ print(subjList)
 
 lessNumList = []
 for subject in subjList:
-    lessNum = subject.rsplit(':', 1)[-1]
+    lessNumStr = subject.rsplit(':', 1)[-1] # get string ('Lesson 00') following colon in each subject in subjList
+    lessNum = lessNumStr.rsplit(' ', 1)[-1] # get number of lessNumStr
     lessNumList.append(lessNum)
     
 print(lessNumList)
