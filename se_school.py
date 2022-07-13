@@ -15,15 +15,16 @@ subjList = []
 subjects = lessonsGroup.find_elements(By.CLASS_NAME, 'dailyLesson')
 
 for s in subjects:
-    subjList.append(s.text)
+    subjList.append(s.text.replace('\n',':'))
 
 print(subjList)
 
 lessNumList = []
 for subject in subjList:
-    lessNum = subject.rsplit('\n', 1)[-1]
+    lessNum = subject.rsplit(':', 1)[-1]
     lessNumList.append(lessNum)
 
 print(lessNumList)
+
 
 
