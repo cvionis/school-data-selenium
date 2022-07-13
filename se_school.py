@@ -7,3 +7,9 @@ driverPath = os.path.abspath('chromedriver')
 driver = webdriver.Chrome(driverPath)
 driver.get('https://academy.abeka.com/Video2/Streaming/Default.aspx?cs=y')
 
+driver.implicitly_wait(20)
+
+lessonsGroup = driver.find_element(By.ID, 'dvLessonsToday')
+
+
+
