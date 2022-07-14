@@ -49,12 +49,19 @@ def main():
         print('...')
     except:
         print('Enter a valid input (1,2, etc.)\n')
-   
+    
+    for s in subjDict:
+        lesson_num_sum = 0
+        if s != 'American Government': # don't take second semester course that hasn't been started into consideration
+            lesson_num_sum += subjDict[s]
+
+    lesson_num_avg = lesson_num_sum/2
+    final_lesson_num = 170
     time_left_num = int(time_left)
     weekdays_in_timeleft = (time_left_num/30) * 22 # convert time_left (days left) to months and multiply by avg num of weekdays in a month (22)
-   
-    print(f'If you complete {lessons_per_day} lessons every week day, you will have completed all lessons by {proj_finish_date}') 
+    
 
+    #print(f'If you complete {lessons_per_day} lessons every week day, you will have completed all lessons by {proj_finish_date}') 
     
 
 
