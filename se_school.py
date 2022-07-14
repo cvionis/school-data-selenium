@@ -50,12 +50,12 @@ def main():
     except:
         print('Enter a valid input (1,2, etc.)\n')
     
+    lesson_num_sum = 0
     for s in subjDict:
-        lesson_num_sum = 0
         if s != 'American Government': # don't take second semester course that hasn't been started into consideration
             lesson_num_sum += subjDict[s]
 
-    lesson_num_avg = lesson_num_sum/2
+    lesson_num_avg = lesson_num_sum/len(subjDict)
     final_lesson_num = 170
     time_left_num = int(time_left.rsplit(' ', 1)[0])
     weekdays_in_timeleft = (time_left_num/30) * 22 # convert time_left (days left) to months and multiply by avg num of weekdays in a month (22)
