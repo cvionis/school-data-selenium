@@ -45,9 +45,14 @@ def main():
     print(time_left_msg)
 
     try: 
-        lessons_per_day = int(input('How many lessons per day do you plan on doing?\n'))
+        lessons_per_day = int(input('\nHow many lessons do you plan to do each day?\n'))
+        print('...')
     except:
         print('Enter a valid input (1,2, etc.)\n')
+    
+
+    
+
 
 main()
 
