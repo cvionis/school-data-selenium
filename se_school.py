@@ -52,7 +52,11 @@ def main():
 
     lessons_per_day = input('How many lessons per day do you plan on doing?\n')
     check = daily_lesson_check(lessons_per_day)
-
+    if check:
+        print('\nDetermining projected finish date...\n')
+    else:
+        print('\nEnter a valid input (of type int)\n')
+        driver.quit() # temporary solution; probably need to implement while loop
 
 main()
 
