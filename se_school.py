@@ -4,12 +4,6 @@ import os
 import time
 import datetime
 
-def daily_lesson_check(n):
-    if type(n) == int:
-        return 1
-    else: 
-        return 0
-
 def main():
     driverPath = os.path.abspath('chromedriver')
     driver = webdriver.Chrome(driverPath)
@@ -36,7 +30,7 @@ def main():
 
     print(subjDict)
 
-    # Need to: Calculate, according to current subject lessons, what current end date is if you do a given number of lessons per day each week day (and days you have left to finish)
+    # Need to: Calculate, according to current subject lessons, what projected finish date is if you do a given number of lessons per day each week day (and days you have left to finish)
 
     current_date = datetime.datetime.now()
     current_date_str = current_date.strftime(f'%m/%d/%y')
@@ -50,13 +44,7 @@ def main():
     time_left_msg = (f'You have {time_left} to finish the school year') 
     print(time_left_msg)
 
-    lessons_per_day = input('How many lessons per day do you plan on doing?\n')
-    check = daily_lesson_check(lessons_per_day)
-    if check:
-        print('\nDetermining projected finish date...\n')
-    else:
-        print('\nEnter a valid input (of type int)\n')
-        driver.quit() # temporary solution; probably need to implement while loop
+    lessons_per_day = int(input('How many lessons per day do you plan on doing?\n'))
 
 main()
 
