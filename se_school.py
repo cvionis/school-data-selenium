@@ -57,7 +57,7 @@ def main():
 
     lesson_num_avg = lesson_num_sum/2
     final_lesson_num = 170
-    time_left_num = int(time_left)
+    time_left_num = int(time_left.rsplit(' ', 1)[0])
     weekdays_in_timeleft = (time_left_num/30) * 22 # convert time_left (days left) to months and multiply by avg num of weekdays in a month (22)
     
 
