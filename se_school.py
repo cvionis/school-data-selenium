@@ -19,15 +19,18 @@ for s in subjects:
 
 subjList = list(filter(None, subjList))
 
-print(subjList)
-
 lessNumList = []
+subjNameList = []
+
 for subject in subjList:
     lessNumStr = subject.rsplit(':', 1)[-1] # get string ('Lesson 00') following colon in each subject in subjList
     lessNum = lessNumStr.rsplit(' ', 1)[-1] # get number of lessNumStr
-    lessNumList.append(lessNum)
+    lessNumList.append(int(lessNum))
     
-print(lessNumList)
+    subjName = subject.rsplit(':',1)[0]
+    subjNameList.append(subjName)
+    
+
 
 
 
