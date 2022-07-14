@@ -44,7 +44,10 @@ def main():
     time_left_msg = (f'You have {time_left} to finish the school year') 
     print(time_left_msg)
 
-    lessons_per_day = int(input('How many lessons per day do you plan on doing?\n'))
+    try: 
+        lessons_per_day = int(input('How many lessons per day do you plan on doing?\n'))
+    except:
+        print('Enter a valid input (1,2, etc.)\n')
 
 main()
 
