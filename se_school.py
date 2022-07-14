@@ -40,7 +40,7 @@ def main():
     print(f'Current date: {current_date_str}')
     print(f'End date: {end_date_str}')
 
-    time_left = str((end_date - current_date)).rsplit(',', 1)[0]
+    time_left = str((end_date - current_date)).rsplit(',', 1)[0] # get the time that you have left (in days) to complete all lessons
     time_left_msg = (f'You have {time_left} to finish the school year') 
     print(time_left_msg)
 
@@ -49,7 +49,11 @@ def main():
         print('...')
     except:
         print('Enter a valid input (1,2, etc.)\n')
-    
+   
+    time_left_num = int(time_left)
+    weekdays_in_timeleft = (time_left_num/30) * 22 # convert time_left (days left) to months and multiply by avg num of weekdays in a month (22)
+   
+    print(f'If you complete {lessons_per_day} lessons every week day, you will have completed all lessons by {proj_finish_date}') 
 
     
 
