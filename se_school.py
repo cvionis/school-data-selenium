@@ -41,6 +41,7 @@ def main():
     print(f'End date: {end_date_str}')
 
     time_left = str((end_date - current_date)).rsplit(',', 1)[0] # get the time that you have left (in days) to complete all lessons
+    time_left_num = int(time_left.rsplit(' ', 1)[0])
     time_left_msg = (f'You have {time_left} to finish the school year') 
     print(time_left_msg)
 
@@ -57,8 +58,9 @@ def main():
 
     lesson_num_avg = lesson_num_sum/len(subjDict)
     final_lesson_num = 170
-    time_left_num = int(time_left.rsplit(' ', 1)[0])
-    weekdays_in_timeleft = (time_left_num/30) * 22 # convert time_left (days left) to months and multiply by avg num of weekdays in a month (22)
+    lessons_left = final_lesson_num - lesson_num_avg
+
+    weekdays_left = (time_left_num/30) * 22 # convert time_left (days left) to months and multiply by avg num of weekdays in a month (22)
     
 
     #print(f'If you complete {lessons_per_day} lessons every week day, you will have completed all lessons by {proj_finish_date}') 
