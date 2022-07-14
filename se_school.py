@@ -37,7 +37,8 @@ end_date = datetime.datetime(2022, 12, 9)
 end_date_str = end_date.strftime(f'%m/%d/%y')
 
 time_left = str((end_date - current_date)).rsplit(',', 1)[0]
-print(time_left)
+time_left_msg = (f'You have {time_left} to finish the school year') 
+print(time_left_msg)
 
 print(f'Current date: {current_date_str}')
 print(f'End date: {end_date_str}')
