@@ -24,7 +24,7 @@ for subj in subjList:
     subjName = subj.rsplit(':',1)[0]
     lessNumStr = subj.rsplit(':', 1)[-1] # get string ('Lesson 00') following colon in each subject in subjList
     lessNum = int(lessNumStr.rsplit(' ', 1)[-1]) # get number of lessNumStr
-    subjDict[subjName] = lessNum
+    subjDict[subjName] = lessNum # create new dict entry for each subject with subjName as key and lessNum as value
 
 print(subjDict)
 
