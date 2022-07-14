@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import os 
 import time
+import datetime
 
 driverPath = os.path.abspath('chromedriver')
 driver = webdriver.Chrome(driverPath)
@@ -28,4 +29,10 @@ for subj in subjList:
 
 print(subjDict)
 
+# Need to: Calculate, according to current subject lessons, what current end date is if you do a given number of lessons per day each week day
 
+
+
+
+
+# Calculate how many subjects and/or lessons (subjects/num of subjects) must be done each day/week in order to finish by end date 
