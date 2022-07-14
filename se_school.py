@@ -29,8 +29,15 @@ for subj in subjList:
 
 print(subjDict)
 
-# Need to: Calculate, according to current subject lessons, what current end date is if you do a given number of lessons per day each week day
+# Need to: Calculate, according to current subject lessons, what current end date is if you do a given number of lessons per day each week day (and days left to finish)
 
+current_date = datetime.datetime.now()
+current_date_str = current_date.strftime(f'%m/%d/%y')
+end_date = datetime.datetime(2022, 12, 9)
+end_date_str = end_date.strftime(f'%m/%d/%y')
+
+print(f'Current date: {current_date_str}')
+print(f'End date: {end_date_str}')
 
 
 
