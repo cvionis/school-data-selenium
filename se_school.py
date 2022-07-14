@@ -4,6 +4,12 @@ import os
 import time
 import datetime
 
+def daily_lesson_check(n):
+    if type(n) == int:
+        return 1
+    else: 
+        return 0
+
 def main():
     driverPath = os.path.abspath('chromedriver')
     driver = webdriver.Chrome(driverPath)
@@ -45,7 +51,9 @@ def main():
     print(time_left_msg)
 
     lessons_per_day = input('How many lessons per day do you plan on doing?\n')
+    check = daily_lesson_check(lessons_per_day)
 
 
+main()
 
     # Calculate how many subjects and/or lessons (subjects/num of subjects) must be done each day/week in order to finish by end date 
