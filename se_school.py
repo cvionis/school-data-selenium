@@ -30,8 +30,6 @@ def main():
 
     print(subjDict)
 
-    # Need to: Calculate, according to current subject lessons, what projected finish date is if you do a given number of lessons per day each week day (and days you have left to finish)
-
     current_date = datetime.datetime.now()
     current_date_str = current_date.strftime(f'%m/%d/%y')
     end_date = datetime.datetime(2022, 12, 9)
