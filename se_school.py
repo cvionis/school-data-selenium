@@ -21,15 +21,17 @@ def main():
 
     subjList = list(filter(None, subjList))
     subjDict = {}
+    
+    print('\nSubjects:\n')
 
     for subj in subjList:
         subjName = subj.rsplit(':',1)[0]
         lessNumStr = subj.rsplit(':', 1)[-1] # get string ('Lesson 00') following colon in each subject in subjList
         lessNum = int(lessNumStr.rsplit(' ', 1)[-1]) # get number of lessNumStr
         subjDict[subjName] = lessNum # create new dict entry for each subject with subjName as key and lessNum as value
-
-    print(subjDict)
-
+        
+        print(f'{subjName} | {lessNumStr}')
+    
     current_date = datetime.datetime.now()
     current_date_str = current_date.strftime(f'%m/%d/%y')
     end_date = datetime.datetime(2022, 12, 9)
