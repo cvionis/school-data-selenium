@@ -42,8 +42,6 @@ def main():
 
     time_left = str((end_date - current_date)).rsplit(',', 1)[0] # get the time that you have left (in days) to complete all lessons
     time_left_num = int(time_left.rsplit(' ', 1)[0])
-    time_left_msg = (f'You have {time_left} to finish the school year') 
-    print(time_left_msg)
 
     try: 
         lessons_per_day = int(input('\nHow many lessons do you plan to do each day?\n'))
@@ -64,7 +62,7 @@ def main():
     # Calculations are probably incorrect; need to incorporate weekdays_left to get correct result
     weekdays_left = (time_left_num/30) * 22 # convert time_left (days left) to months and multiply by avg num of weekdays in a month (22) to obtain weekdays left
     weekends_left = time_left_num - weekdays_left
-
+    
     proj_days_to_fin = lessons_left / lessons_per_day
 
     proj_finish_date = current_date + datetime.timedelta(days=proj_days_to_fin)
