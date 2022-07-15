@@ -58,8 +58,6 @@ def main():
     final_lesson_num = 170
     lessons_left = final_lesson_num - lesson_num_avg
     
-    # Use weekdays_left to allow the user to enter a desired finish date, and output number of lessons per day that must be completed in order to finish by then
-    # Calculations are probably incorrect; need to incorporate weekdays_left to get correct result
     weekdays_left = (time_left_num/30) * 22 # convert time_left (days left) to months and multiply by avg num of weekdays in a month (22) to obtain weekdays left
     weekends_left = (time_left_num - weekdays_left)/2
    
@@ -79,5 +77,3 @@ def main():
             This means you will finish on {proj_finish_date_str}.\n\n''')
 
 main()
-
-    # Calculate how many subjects and/or lessons (subjects/num of subjects) must be done each day/week in order to finish by end date 
