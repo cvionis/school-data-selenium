@@ -49,10 +49,7 @@ def main():
     except:
         print('Enter a valid input (1,2, etc.)\n')
     
-    lesson_num_sum = 0
-    for s in subjDict:
-        if s != 'American Government': # don't take second semester course that hasn't been started into consideration
-            lesson_num_sum += subjDict[s]
+    lesson_num_sum = sum([subjDict[s] for s in subjDict if s != 'American Government'])
 
     lesson_num_avg = round((lesson_num_sum/len(subjDict)), 0)
     final_lesson_num = 170
