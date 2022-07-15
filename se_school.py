@@ -35,8 +35,8 @@ def main():
     end_date = datetime.datetime(2022, 12, 9)
     end_date_str = end_date.strftime(f'%m/%d/%y')
 
-    print(f'Current date: {current_date_str}')
-    print(f'End date: {end_date_str}')
+    print(f'\nCurrent date: {current_date_str}\n')
+    print(f'End date: {end_date_str}i\n')
 
     time_left = str((end_date - current_date)).rsplit(',', 1)[0] # get the time that you have left (in days) to complete all lessons
     time_left_num = int(time_left.rsplit(' ', 1)[0])
@@ -48,6 +48,7 @@ def main():
         print('Enter a valid input (1,2, etc.)\n')
     
     lesson_num_sum = sum([subjDict[s] for s in subjDict if subjDict[s] >= 50]) # don't include subject lesson numbers < 50 in lesson number sum (e.g. lesson numbers for classes that haven't been started)
+    
     lesson_num_avg = round((lesson_num_sum/(len(subjDict)-1)), 0)
     final_lesson_num = 170
     lessons_left = final_lesson_num - lesson_num_avg
