@@ -49,7 +49,7 @@ def main():
     except:
         print('Enter a valid input (1,2, etc.)\n')
     
-    lesson_num_sum = sum([subjDict[s] for s in subjDict if s != 'American Government'])
+    lesson_num_sum = sum([subjDict[s] for s in subjDict if subjDict[s] >= 50]) # don't include subject lesson numbers < 50 in lesson number sum (e.g. lesson numbers for classes that haven't been started)
 
     lesson_num_avg = round((lesson_num_sum/len(subjDict)), 0)
     final_lesson_num = 170
