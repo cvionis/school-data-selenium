@@ -63,10 +63,11 @@ def main():
     weekdays_left = (time_left_num/30) * 22 # convert time_left (days left) to months and multiply by avg num of weekdays in a month (22) to obtain weekdays left
     weekends_left = time_left_num - weekdays_left
    
-    proj_days_to_fin = weekdays_left + (lessons_left/lessons_per_day)
+    proj_days_to_fin = weekdays_left + (lessons_left/lessons_per_day) # the number of days it will currently take you to finish
+ 
     #proj_days_to_fin = lessons_left / lessons_per_day
 
-    proj_finish_date = current_date + datetime.timedelta(days=proj_days_to_fin)
+    proj_finish_date = current_date + datetime.timedelta(days=proj_days_to_fin) 
     proj_finish_date_str = proj_finish_date.strftime(f'%m/%d/%y')
     
     print(f'''Your current average lesson number is {lesson_num_avg}\n
