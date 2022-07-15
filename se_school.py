@@ -61,12 +61,12 @@ def main():
     proj_finish_date_str = proj_finish_date.strftime(f'%m/%d/%y')
     
     print(f'''Your current average lesson number is {lesson_num_avg}\n
-            You currently have {lessons_left} lessons to go\n
-            -----------------------------------------------\n
+            You currently have {lessons_left} lessons to go.\n
+            -----------------------------------------------------------------\n
             You have {time_left_num} days left to complete the school year...\n
             You have {weekdays_left} weekdays to complete the school year...\n
             There are {weekends_left} weekends left before the end of the school year...\n
-            -----------------------------------------------\n
+            -----------------------------------------------------------------\n
             At your current rate ({lessons_per_day} lessons each weekday), it will take you {proj_days_to_fin} days to finish.\n 
             This means you will finish on {proj_finish_date_str}.\n\n''')
 
