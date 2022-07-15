@@ -63,7 +63,8 @@ def main():
     # Use weekdays_left to allow the user to enter a desired finish date, and output number of lessons per day that must be completed in order to finish by then
     # Calculations are probably incorrect; need to incorporate weekdays_left to get correct result
     weekdays_left = (time_left_num/30) * 22 # convert time_left (days left) to months and multiply by avg num of weekdays in a month (22) to obtain weekdays left
-    
+    weekends_left = time_left_num - weekdays_left
+
     proj_days_to_fin = lessons_left / lessons_per_day
 
     proj_finish_date = current_date + datetime.timedelta(days=proj_days_to_fin)
