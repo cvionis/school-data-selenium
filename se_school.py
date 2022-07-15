@@ -43,7 +43,7 @@ def main():
 
     try: 
         lessons_per_day = int(input('\nHow many lessons do you plan to do each day?\n'))
-        print('...\n')
+        print('\n...\n')
     except:
         print('Enter a valid input (1,2, etc.)\n')
     
