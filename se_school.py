@@ -35,14 +35,14 @@ def main():
     end_date = datetime.datetime(2022, 12, 9)
     end_date_str = end_date.strftime(f'%m/%d/%y')
 
-    print(f'\nCurrent date: {current_date_str}\n')
+    print(f'\nCurrent date: {current_date_str}')
     print(f'End date: {end_date_str}i\n')
 
     time_left = str((end_date - current_date)).rsplit(',', 1)[0] # get the time that you have left (in days) to complete all lessons
     time_left_num = int(time_left.rsplit(' ', 1)[0])
 
     try: 
-        lessons_per_day = int(input('\nHow many lessons do you plan to do each day?\n'))
+        lessons_per_day = int(input('\nHow many lessons do you plan to do each day?\n> '))
         print('\n...\n')
     except:
         print('Enter a valid input (1,2, etc.)\n')
