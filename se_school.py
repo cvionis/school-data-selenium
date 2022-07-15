@@ -54,16 +54,16 @@ def main():
         if s != 'American Government': # don't take second semester course that hasn't been started into consideration
             lesson_num_sum += subjDict[s]
 
-    lesson_num_avg = lesson_num_sum/len(subjDict)
+    lesson_num_avg = round((lesson_num_sum/len(subjDict)), 0)
     final_lesson_num = 170
     lessons_left = final_lesson_num - lesson_num_avg
     
-    weekdays_left = (time_left_num/30) * 22 # convert time_left (days left) to months and multiply by avg num of weekdays in a month (22) to obtain weekdays left
-    weekends_left = (time_left_num - weekdays_left)/2
+    weekdays_left = round(((time_left_num/30) * 22), 0) # convert time_left (days left) to months and multiply by avg num of weekdays in a month (22) to obtain weekdays left
+    weekends_left = round(((time_left_num - weekdays_left)/2), 0)
    
-    proj_days_to_fin = lessons_left / lessons_per_day # the number of days it will currently take you to finish
+    proj_days_to_fin = round((lessons_left / lessons_per_day), 0) # the number of days it will currently take you to finish
  
-    proj_finish_date = current_date + datetime.timedelta(days=proj_days_to_fin) 
+    proj_finish_date = current_date + datetime.timedelta(days=(proj_days_to_fin + weekends_left)) 
     proj_finish_date_str = proj_finish_date.strftime(f'%m/%d/%y')
     
     print(f'''Your current average lesson number is {lesson_num_avg}\n
