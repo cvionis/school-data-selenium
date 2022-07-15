@@ -62,15 +62,22 @@ def main():
     # Calculations are probably incorrect; need to incorporate weekdays_left to get correct result
     weekdays_left = (time_left_num/30) * 22 # convert time_left (days left) to months and multiply by avg num of weekdays in a month (22) to obtain weekdays left
     weekends_left = time_left_num - weekdays_left
-    
-    proj_days_to_fin = lessons_left / lessons_per_day
+   
+    proj_days_to_fin = weekdays_left + (lessons_left/lessons_per_day)
+    #proj_days_to_fin = lessons_left / lessons_per_day
 
     proj_finish_date = current_date + datetime.timedelta(days=proj_days_to_fin)
     proj_finish_date_str = proj_finish_date.strftime(f'%m/%d/%y')
     
-    print(f'If you complete {lessons_per_day} lessons every week day, you will have completed all lessons by {proj_finish_date_str}') 
-    
-
+    print(f'''Your current average lesson number is {lesson_num_avg}\n
+            You currently have {lessons_left} lessons to go\n
+            -----------------------------------------------\n
+            You have {time_left_num} total days to complete the school year...\n
+            You have {weekdays_left} weekdays to complete the school year...\n
+            There are {weekends_left} weekends left before the end of the school year...\n
+            -----------------------------------------------\n
+            At your current rate ({lessons_per_day} lessons each weekday), it will take you {proj_days_to_fin} days to finish.\n 
+            This means you will finish on {proj_finish_date_str}.\n\n''')
 
 main()
 
